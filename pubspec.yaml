@@ -44,6 +44,8 @@ dependencies:
   pinput: ^4.0.0
   page_view_dot_indicator: ^2.3.0
   shared_preferences: ^2.0.8
+  simple_ripple_animation: ^0.0.9
+  video_player: ^2.8.6
 
 dev_dependencies:
   flutter_test:

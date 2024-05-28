@@ -1,4 +1,4 @@
-import 'package:barber_app/view/screens/Splash_screen/splashscreen.dart';
+import 'package:barber_app/view/Splash_screen/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

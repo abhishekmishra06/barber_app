@@ -10,6 +10,7 @@ const grey = Colors.grey;
 const lightgrey = Color.fromARGB(44, 190, 190, 190);
 const buttonborder = Color.fromARGB(158, 190, 190, 190);
 const darkbgcolor = Color.fromARGB(240, 49, 50, 63);
+const cardColor = Color.fromARGB(226, 255, 255, 255);
 
 class SizeConfig {
   static late MediaQueryData _mediaQueryData;
