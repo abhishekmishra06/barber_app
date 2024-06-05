@@ -1,4 +1,4 @@
-# barber_app
+# SalonConnect
 
 A new Flutter project.
 
