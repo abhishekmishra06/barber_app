@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
-import '../../const/const.dart';
-import 'textstyle.dart';
+import 'package:barber_app/utils/components/imports.dart';
+
 
 class Inputfield extends StatefulWidget {
   const Inputfield({
@@ -37,17 +36,24 @@ class _InputfieldState extends State<Inputfield> {
           borderRadius: BorderRadius.circular(10),
           border: isFocused ? Border.all(color: yellow) : null,
         ),
-        child: TextFormField(
-          controller: widget.controller,
-          onChanged: (value) {},
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            prefixIcon: Icon(widget.inputfieldIcon.icon),
-            prefixIconColor: isFocused ? yellow : grey,
-            hintText: widget.hinttext,
-            hintStyle: Textstyle.hinttextcolor,
+        child: Center(
+          child: TextFormField(
+            style: TextStyle(
+                color: isFocused ? yellow : grey, fontWeight: FontWeight.bold),
+            controller: widget.controller,
+            onChanged: (value) {},
+            textAlignVertical: TextAlignVertical.center,
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              prefixIcon: Icon(widget.inputfieldIcon.icon),
+              prefixIconColor: isFocused ? yellow : grey,
+              hintText: widget.hinttext,
+              hintStyle: TextStyle(
+                color: isFocused ? yellow : grey,
+              ),
+            ),
+            autofocus: false,
           ),
-          autofocus: false,
         ),
       ),
     );
@@ -64,7 +70,7 @@ class PasswordInputField extends StatefulWidget {
 
   final TextEditingController controller;
   final Icon inputfieldIcon;
-  late  bool visible;
+  late bool visible;
 
   @override
   _PasswordInputFieldState createState() => _PasswordInputFieldState();
@@ -88,29 +94,36 @@ class _PasswordInputFieldState extends State<PasswordInputField> {
           borderRadius: BorderRadius.circular(10),
           border: isFocused ? Border.all(color: yellow) : null,
         ),
-        child: TextFormField(
-          controller: widget.controller,
-          obscureText: !widget.visible,
-          onChanged: (value) {},
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            prefixIcon: Icon(widget.inputfieldIcon.icon),
-            prefixIconColor: isFocused ? yellow : grey,
-            hintText: "* * * * * * * *",
-            hintStyle: Textstyle.hinttextcolor,
-            suffixIcon: GestureDetector(
-              onTap: () {
-                setState(() {
-                  widget.visible = !widget.visible;
-                });
-              },
-              child: Icon(
-                widget.visible ? Icons.visibility : Icons.visibility_off,
+        child: Center(
+          child: TextFormField(
+            controller: widget.controller,
+            obscureText: !widget.visible,
+            onChanged: (value) {},
+            style: TextStyle(
+                color: isFocused ? yellow : grey, fontWeight: FontWeight.bold),
+            textAlignVertical: TextAlignVertical.center,
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              prefixIcon: Icon(widget.inputfieldIcon.icon),
+              prefixIconColor: isFocused ? yellow : grey,
+              hintText: "* * * * * * * *",
+              hintStyle: TextStyle(
+                color: isFocused ? yellow : grey,
               ),
+              suffixIcon: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    widget.visible = !widget.visible;
+                  });
+                },
+                child: Icon(
+                  widget.visible ? Icons.visibility : Icons.visibility_off,
+                ),
+              ),
+              suffixIconColor: isFocused ? yellow : grey,
             ),
-            suffixIconColor: grey,
+            autofocus: false,
           ),
-          autofocus: false,
         ),
       ),
     );

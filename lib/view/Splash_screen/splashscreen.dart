@@ -1,9 +1,6 @@
-import 'dart:async';
-import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:get/get.dart';
-import '../../const/const.dart';
-import '../welcome_screen/welcome_screen1.dart';
+import 'package:barber_app/utils/components/imports.dart';
+ import 'package:flutter_spinkit/flutter_spinkit.dart';
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -13,35 +10,19 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   void initState() {
     super.initState();
-  
+
     Timer(const Duration(seconds: 5), () async {
-      Get.offAll(
-        const Welcomescreen1());
-
-
-
-      //  check user is already login or not
-      // bool isSignedIn = await GoogleSignInHelper().isUserSignedIn();
-//  condition if login then homescreen else signup screen
-      // isSignedIn
-      // ? Get.offAll(const Personalinfoscreen())
-      // : Get.offAll(const Welcomescreen1());
-      // if (isSignedIn) {
-      //   Get.offAll(const HomeScreen());
-      // } else {
-      //   Get.offAll(const Welcomescreen1());
-      // }
+      Get.offAll(const Welcomescreen1());
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      backgroundColor:  yellow,
+    return Scaffold(
+      backgroundColor: yellow,
       body: Stack(
         fit: StackFit.expand,
         children: [

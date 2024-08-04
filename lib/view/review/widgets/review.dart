@@ -1,10 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:get/get.dart';
-
-import '../../../const/const.dart';
-import '../../../utils/components/textstyle.dart';
-import '../reviewscreen.dart';
+import 'package:barber_app/utils/components/imports.dart';
+ 
 
 class Reviewscreencard extends StatelessWidget {
   const Reviewscreencard({super.key});

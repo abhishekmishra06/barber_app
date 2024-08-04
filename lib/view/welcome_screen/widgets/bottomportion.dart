@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
-import '../../../const/const.dart';
-import '../../../utils/components/buttons_widget.dart';
-import '../../../utils/components/textstyle.dart';
+ import 'package:barber_app/utils/components/imports.dart';
+
 
 class Bottomportion extends StatelessWidget {
   const Bottomportion({super.key});

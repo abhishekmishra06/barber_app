@@ -1,13 +1,7 @@
 import 'dart:io';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
-import '../../controller/controller.dart';
-import '../../utils/components/inputfield.dart';
-import '../../const/const.dart';
-import '../../utils/components/buttons_widget.dart';
-import '../../utils/components/textstyle.dart';
-import '../home_screen/homescreen.dart';
+
+import 'package:barber_app/utils/components/imports.dart';
+ 
 
 File? galleryFile;
 
@@ -89,8 +83,8 @@ class _PersonalinfoscreenState extends State<Personalinfoscreen> {
                                               fit: BoxFit.cover,
                                             )))),
                         Positioned(
-                            bottom: 10,
-                            right: 0,
+                            bottom: 14,
+                            right: 5,
                             child: GestureDetector(
                               onTap: () {
                                 _showPicker(context: context);
@@ -106,17 +100,6 @@ class _PersonalinfoscreenState extends State<Personalinfoscreen> {
                                   size: 18,
                                   color: white,
                                 ),
-
-                                //  IconButton(
-                                //   onPressed: () {
-                                //     // _showPicker(context: context);
-                                //   },
-                                //   icon: const Icon(Icons.edit),
-                                //   iconSize: 20,
-                                //   color: Colors.white,
-                                //   tooltip: "change picture",
-                                //   mouseCursor: SystemMouseCursors.click,
-                                // ),
                               ),
                             ))
                       ],
@@ -127,7 +110,7 @@ class _PersonalinfoscreenState extends State<Personalinfoscreen> {
                   height: 30,
                 ),
                 const Text(
-                  "Full Name",
+                  "First Name",
                   style: Textstyle.hinttextcolor,
                 ),
                 const SizedBox(
@@ -135,13 +118,13 @@ class _PersonalinfoscreenState extends State<Personalinfoscreen> {
                 ),
                 Inputfield(
                     controller: emailController,
-                    hinttext: "e.g. Vāsudeva-Krishna",
-                    inputfieldIcon: const Icon(Icons.phone_android_rounded)),
+                    hinttext: "e.g. Sakshi",
+                    inputfieldIcon: const Icon(Icons.person_2)),
                 const SizedBox(
                   height: 20,
                 ),
                 const Text(
-                  "Nick Name",
+                  "Last Name",
                   style: Textstyle.hinttextcolor,
                 ),
                 const SizedBox(
@@ -149,8 +132,8 @@ class _PersonalinfoscreenState extends State<Personalinfoscreen> {
                 ),
                 Inputfield(
                     controller: emailController,
-                    hinttext: "e.g. Kanha",
-                    inputfieldIcon: const Icon(Icons.phone_android_rounded)),
+                    hinttext: "e.g. Rai",
+                    inputfieldIcon: const Icon(Icons.person_3)),
                 const SizedBox(
                   height: 20,
                 ),
@@ -164,7 +147,7 @@ class _PersonalinfoscreenState extends State<Personalinfoscreen> {
                 Inputfield(
                     controller: emailController,
                     hinttext: "e.g. 09-08-2000",
-                    inputfieldIcon: const Icon(Icons.person_2_rounded)),
+                    inputfieldIcon: const Icon(Icons.calendar_month)),
                 const SizedBox(
                   height: 20,
                 ),
@@ -177,13 +160,13 @@ class _PersonalinfoscreenState extends State<Personalinfoscreen> {
                 ),
                 Inputfield(
                     controller: emailController,
-                    hinttext: "e.g. Male",
-                    inputfieldIcon: const Icon(Icons.person_2_rounded)),
+                    hinttext: "e.g. Female",
+                    inputfieldIcon: const Icon(Icons.male)),
                 const SizedBox(
                   height: 20,
                 ),
                 const Text(
-                  "father’s name",
+                  "Address",
                   style: Textstyle.hinttextcolor,
                 ),
                 const SizedBox(
@@ -191,8 +174,8 @@ class _PersonalinfoscreenState extends State<Personalinfoscreen> {
                 ),
                 Inputfield(
                     controller: emailController,
-                    hinttext: "e.g. Vasudeva",
-                    inputfieldIcon: const Icon(Icons.person_2_rounded)),
+                    hinttext: "e.g. Lucknow",
+                    inputfieldIcon: const Icon(Icons.location_city)),
               ],
             ),
           ),
@@ -211,7 +194,7 @@ class _PersonalinfoscreenState extends State<Personalinfoscreen> {
                   buttontextcolor: black,
                   buttonwidth: double.infinity,
                   onTap: () {
-                    Get.offAll(Homecreen());
+                    Get.offAll(const BottomNavigation());
                   },
                 ),
               ),

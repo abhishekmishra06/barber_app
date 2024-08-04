@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import '../../const/const.dart';
+import 'package:barber_app/utils/components/imports.dart';
 
 class Textstyle {
   static const TextStyle black = TextStyle(
@@ -8,7 +7,7 @@ class Textstyle {
   );
 
   static const TextStyle hinttextcolor = TextStyle(
-    color:  grey,
+    color: grey,
     fontWeight: FontWeight.bold,
   );
 

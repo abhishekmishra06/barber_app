@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:barber_app/utils/components/imports.dart';
+
 
 class AppointmentBooking extends StatefulWidget {
   const AppointmentBooking({super.key});

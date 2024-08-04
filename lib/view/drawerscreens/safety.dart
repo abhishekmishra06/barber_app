@@ -1,9 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart';
-import '../../const/const.dart';
-import '../../utils/components/list.dart';
-import 'safety_trips.dart';
+import 'package:barber_app/utils/components/imports.dart';
+ 
+
 
 class Saftey extends StatelessWidget {
   const Saftey({super.key});

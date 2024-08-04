@@ -1,8 +1,5 @@
-import 'package:barber_app/view/home_screen/homescreen.dart';
-import 'package:barber_app/view/bookmarks/mybookmark.dart';
-import 'package:flutter/material.dart';
+import 'package:barber_app/utils/components/imports.dart';
 
-import '../../const/const.dart';
 
 class Mostpupular extends StatelessWidget {
   const Mostpupular({super.key});
@@ -23,12 +20,12 @@ class Mostpupular extends StatelessWidget {
           padding: const EdgeInsets.all(15.0),
           child: SingleChildScrollView(
             child: Column(children: [
-             buildorders(
+             SalonCard(
                   duration: '10 min',
                   imageUrl:
                       'https://images.pexels.com/photos/2820884/pexels-photo-2820884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                  onbookmarkicon: () {
-                    removebookmark(context);
+                  onBookmarkIcon: () {
+                    // removebookmark(context);
                   },
                   shopName: 'Salon One',
                   location: '123 Street, City',
@@ -37,12 +34,12 @@ class Mostpupular extends StatelessWidget {
               const SizedBox(
                 height: 15,
               ),
-            buildorders(
+            SalonCard(
                   duration: '10 min',
                   imageUrl:
                       'https://images.pexels.com/photos/2820884/pexels-photo-2820884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                  onbookmarkicon: () {
-                    removebookmark(context);
+                  onBookmarkIcon: () {
+                    // removebookmark(context);
                   },
                   shopName: 'Salon One',
                   location: '123 Street, City',
@@ -50,12 +47,12 @@ class Mostpupular extends StatelessWidget {
                 ),            const SizedBox(
                 height: 15,
               ),
-            buildorders(
+            SalonCard(
                   duration: '10 min',
                   imageUrl:
                       'https://images.pexels.com/photos/2820884/pexels-photo-2820884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                  onbookmarkicon: () {
-                    removebookmark(context);
+                  onBookmarkIcon: () {
+                    // removebookmark(context);
                   },
                   shopName: 'Salon One',
                   location: '123 Street, City',
@@ -63,12 +60,12 @@ class Mostpupular extends StatelessWidget {
                 ),            const SizedBox(
                 height: 15,
               ),
-            buildorders(
+            SalonCard(
                   duration: '10 min',
                   imageUrl:
                       'https://images.pexels.com/photos/2820884/pexels-photo-2820884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                  onbookmarkicon: () {
-                    removebookmark(context);
+                  onBookmarkIcon: () {
+                    // removebookmark(context);
                   },
                   shopName: 'Salon One',
                   location: '123 Street, City',
@@ -76,12 +73,12 @@ class Mostpupular extends StatelessWidget {
                 ),            const SizedBox(
                 height: 15,
               ),
-            buildorders(
+            SalonCard(
                   duration: '10 min',
                   imageUrl:
                       'https://images.pexels.com/photos/2820884/pexels-photo-2820884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                  onbookmarkicon: () {
-                    removebookmark(context);
+                  onBookmarkIcon: () {
+                    // removebookmark(context);
                   },
                   shopName: 'Salon One',
                   location: '123 Street, City',
@@ -89,12 +86,12 @@ class Mostpupular extends StatelessWidget {
                 ),            const SizedBox(
                 height: 15,
               ),
-            buildorders(
+            SalonCard(
                   duration: '10 min',
                   imageUrl:
                       'https://images.pexels.com/photos/2820884/pexels-photo-2820884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-                  onbookmarkicon: () {
-                    removebookmark(context);
+                  onBookmarkIcon: () {
+                    // removebookmark(context);
                   },
                   shopName: 'Salon One',
                   location: '123 Street, City',

@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import '../../const/const.dart';
+import 'package:barber_app/utils/components/imports.dart';
+
 
 void showSnackBar(BuildContext context, {String message = ""}) {
   final snackBar = SnackBar(

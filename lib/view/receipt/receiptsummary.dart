@@ -1,12 +1,7 @@
-import 'package:barber_app/const/const.dart';
-import 'package:barber_app/utils/components/textstyle.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:barber_app/utils/components/imports.dart';
+ 
 
-import '../../utils/components/buttons_widget.dart';
-import '../feedback.dart';
-import 'finalE-receipt.dart';
-
+ 
 class Receiptsummary extends StatelessWidget {
   const Receiptsummary({super.key});
 
@@ -288,6 +283,8 @@ class Receiptsummary extends StatelessWidget {
 }
 
 class BookingSuccessDialog extends StatelessWidget {
+  const BookingSuccessDialog({super.key});
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -331,7 +328,7 @@ class BookingSuccessDialog extends StatelessWidget {
             buttontextcolor: black,
             buttonwidth: double.infinity,
             onTap: () {
-              Get.to(const FinalE_recipt());
+              Get.to(const FinalERecipt());
             },
           ),
           const SizedBox(height: 15),
@@ -356,7 +353,7 @@ void showBookingSuccessDialog(BuildContext context) {
   showDialog(
     context: context,
     builder: (BuildContext context) {
-      return BookingSuccessDialog();
+      return const BookingSuccessDialog();
     },
   );
 }

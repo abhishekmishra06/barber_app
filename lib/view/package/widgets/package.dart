@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../../const/const.dart';
-import '../../../utils/components/buttons_widget.dart';
-import '../../home_screen/homescreen.dart';
-import '../../booking/pages/packagebook.dart';
-import '../packagescreen.dart';
+import 'package:barber_app/utils/components/imports.dart';
 
 class Packagescreenwidget extends StatelessWidget {
   const Packagescreenwidget({super.key});
@@ -14,7 +7,7 @@ class Packagescreenwidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        NearbyLocation(
+        RowListTile(
           buttontext: "See All",
           text: "Our Package",
           onpressed: () {
@@ -172,7 +165,7 @@ class Packagecards extends StatelessWidget {
                                   buttontextcolor: white,
                                   buttonwidth: 115,
                                   onTap: () {
-                                    Get.to(Packagebooking());
+                                    Get.to(const Packagebooking());
                                   },
                                 ),
                               ) // TextButton(onPressed: (){}, child: Text("data"))

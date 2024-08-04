@@ -1,9 +1,5 @@
-import 'package:barber_app/view/paymentmethods/payment_screen.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../../const/const.dart';
-import '../../../utils/components/buttons_widget.dart';
+import 'package:barber_app/utils/components/imports.dart';
+ 
 
 class Packagebooking extends StatelessWidget {
   const Packagebooking({super.key});

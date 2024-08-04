@@ -1,5 +1,5 @@
-import 'package:barber_app/utils/components/textstyle.dart';
-import 'package:flutter/material.dart';
+import 'package:barber_app/utils/components/imports.dart';
+
 
 class Explorescreen extends StatelessWidget {
   const Explorescreen({super.key});

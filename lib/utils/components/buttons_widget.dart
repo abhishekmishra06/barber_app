@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:barber_app/utils/components/imports.dart';
 
-import '../../const/const.dart';
 
+// text button
 class TextButtonwidget extends StatelessWidget {
   const TextButtonwidget({
     super.key,
@@ -49,6 +49,7 @@ class TextButtonwidget extends StatelessWidget {
   }
 }
 
+// icon button
 class IconButtonwidget extends StatelessWidget {
   const IconButtonwidget({
     super.key,
@@ -78,8 +79,7 @@ class IconButtonwidget extends StatelessWidget {
       width: buttonwidth,
       child: OutlinedButton(
           style: OutlinedButton.styleFrom(
-              side: BorderSide(
-                  color: buttonbordercolor), // Change border color here
+              side: BorderSide(color: buttonbordercolor),
               textStyle:
                   const TextStyle(fontSize: 15, fontStyle: FontStyle.italic),
               shape: RoundedRectangleBorder(
@@ -117,12 +117,12 @@ class IconButtonwidget extends StatelessWidget {
   }
 }
 
+// outline button
 class Outlinebutton extends StatelessWidget {
   const Outlinebutton(
       {super.key,
       required this.buttontext,
       required this.onTap,
-      // required this.buttonheight,
       required this.buttonbordercolor,
       required this.buttonborderRadius,
       this.buttonbgcolor,
@@ -140,8 +140,7 @@ class Outlinebutton extends StatelessWidget {
     return OutlinedButton(
         style: OutlinedButton.styleFrom(
           backgroundColor: buttonbgcolor,
-          side:
-              BorderSide(color: buttonbordercolor), // Change border color here
+          side: BorderSide(color: buttonbordercolor),
           textStyle: const TextStyle(
             fontSize: 15,
             fontFamily: "Inter",
@@ -156,5 +155,33 @@ class Outlinebutton extends StatelessWidget {
             color: buttontextcolor ?? yellow,
           ),
         ));
+  }
+}
+
+// IconButtonWithName widget
+class IconButtonWithName extends StatelessWidget {
+  final IconData icon;
+  final String name;
+  final Function()? ontap;
+
+  const IconButtonWithName(
+      {super.key, required this.icon, required this.name, this.ontap});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        CircleAvatar(
+            radius: 20,
+            backgroundColor: lightyellow,
+            child: IconButton(
+                onPressed: ontap,
+                icon: Icon(
+                  icon,
+                  color: yellow,
+                ))),
+        Text(name),
+      ],
+    );
   }
 }

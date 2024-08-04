@@ -1,12 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../../const/const.dart';
-import '../../utils/components/buttons_widget.dart';
-import '../../utils/components/textstyle.dart';
-import '../drawerscreens/histort.dart';
-import '../drawerscreens/safety.dart';
-import '../receipt/receiptsummary.dart';
-import 'widgets/paymentmethod.dart';
+import 'package:barber_app/utils/components/imports.dart';
+ 
+
 
 class PaymentScreen extends StatelessWidget {
   const PaymentScreen({super.key});

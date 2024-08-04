@@ -1,14 +1,7 @@
-import 'package:barber_app/const/const.dart';
-import 'package:barber_app/utils/components/textstyle.dart';
-import 'package:barber_app/view/booking/widgets/cancelledbooking.dart';
-import 'package:barber_app/view/booking/widgets/completedbooking.dart';
-import 'package:barber_app/view/booking/widgets/upcomingbooking.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:barber_app/utils/components/imports.dart';
+  
 
-import '../../utils/components/buttons_widget.dart';
-import '../paymentmethods/payment_screen.dart';
-import '../receipt/receiptsummary.dart';
+ 
 
 class BookingScreen extends StatefulWidget {
   const BookingScreen({Key? key}) : super(key: key);

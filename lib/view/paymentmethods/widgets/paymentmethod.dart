@@ -1,7 +1,5 @@
-import 'package:barber_app/const/const.dart';
-import 'package:barber_app/utils/components/buttons_widget.dart';
-import 'package:barber_app/utils/components/textstyle.dart';
-import 'package:flutter/material.dart';
+import 'package:barber_app/utils/components/imports.dart';
+
 
 class PaymentMethodsScreen extends StatefulWidget {
   const PaymentMethodsScreen({super.key});
@@ -143,7 +141,7 @@ class PaymentMethodItem extends StatelessWidget {
           style: Textstyle.black,
         ),
         trailing: Radio(
-          fillColor: const MaterialStatePropertyAll(yellow),
+          fillColor: const WidgetStatePropertyAll(yellow),
           value: name,
           groupValue: isSelected ? name : null,
           onChanged: (value) {

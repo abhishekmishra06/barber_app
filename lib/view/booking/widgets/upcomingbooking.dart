@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:barber_app/utils/components/imports.dart';
 
-import '../mybooking.dart';
 
 class Upcomingbooking extends StatelessWidget {
   const Upcomingbooking({super.key});

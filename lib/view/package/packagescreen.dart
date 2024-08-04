@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
-
-import '../../const/const.dart';
-import 'widgets/package.dart';
+import 'package:barber_app/utils/components/imports.dart';
+ 
 
 class Packagescreen extends StatelessWidget {
   const Packagescreen({super.key});

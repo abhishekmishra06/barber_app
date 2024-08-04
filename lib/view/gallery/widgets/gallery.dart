@@ -1,9 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../../const/const.dart';
-import '../../home_screen/homescreen.dart';
-import '../ourgallery.dart';
+import 'package:barber_app/utils/components/imports.dart';
+ 
 
 class ImageList extends StatelessWidget {
   const ImageList({
@@ -12,27 +8,12 @@ class ImageList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> imageUrls = [
-      'https://images.pexels.com/photos/2899097/pexels-photo-2899097.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-      'https://images.pexels.com/photos/213780/pexels-photo-213780.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-      'https://images.pexels.com/photos/2820884/pexels-photo-2820884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-      'https://images.pexels.com/photos/2899097/pexels-photo-2899097.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-      'https://images.pexels.com/photos/213780/pexels-photo-213780.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-      'https://images.pexels.com/photos/2820884/pexels-photo-2820884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-      'https://images.pexels.com/photos/2899097/pexels-photo-2899097.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-      'https://images.pexels.com/photos/213780/pexels-photo-213780.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-      'https://images.pexels.com/photos/2820884/pexels-photo-2820884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-      'https://images.pexels.com/photos/2899097/pexels-photo-2899097.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-      'https://images.pexels.com/photos/213780/pexels-photo-213780.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-      'https://images.pexels.com/photos/2820884/pexels-photo-2820884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-      // Add more image URLs as needed
-    ];
     final screenWidth = MediaQuery.of(context).size.width;
     final itemWidth = screenWidth / 3.4;
     return SingleChildScrollView(
       child: Column(
         children: [
-          NearbyLocation(
+          RowListTile(
             buttontext: "See All",
             text: "Our Gallery",
             onpressed: () {
@@ -45,13 +26,11 @@ class ImageList extends StatelessWidget {
           ),
           Wrap(
             alignment: WrapAlignment.start,
-            spacing: 5.0, // Adjust the spacing between images
-            runSpacing: 5.0, // Adjust the spacing between rows
-            children: imageUrls.map((url) {
+            spacing: 5.0,
+            runSpacing: 5.0,
+            children: DummyData.imageUrls.map((url) {
               return GestureDetector(
-                onTap: () {
-                  // Add onTap functionality if needed
-                },
+                onTap: () {},
                 child: GestureDetector(
                   onTap: () {
                     _showImageDialog(context, url);

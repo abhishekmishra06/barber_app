@@ -12,17 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home:  const SplashScreen());
+        home: const SplashScreen());
   }
 }
-
-//  const SpinKitChasingDots(
-//           duration: Duration(seconds: 003),
-//           color: Colors.white,
-//           size: 50.0,
-//         )

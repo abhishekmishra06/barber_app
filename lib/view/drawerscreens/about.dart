@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:barber_app/utils/components/imports.dart';
 
 class Aboutscreen extends StatelessWidget {
   const Aboutscreen({super.key});

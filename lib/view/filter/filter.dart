@@ -1,12 +1,14 @@
-import 'package:barber_app/utils/components/textstyle.dart';
-import 'package:flutter/material.dart';
+import 'package:barber_app/utils/components/imports.dart';
 
-import '../../const/const.dart';
-import '../../utils/components/buttons_widget.dart';
-import '../home_screen/homescreen.dart';
 
 void showform(BuildContext context) {
-  // double screenHeight = MediaQuery.of(context).size.height;
+  final List<String> buttonLabels = [
+    "All",
+    "Haircuts",
+    "Make up",
+    "Beauty",
+    "Face"
+  ];
   showModalBottomSheet<void>(
     elevation: 2,
     isScrollControlled: true,
@@ -52,16 +54,61 @@ void showform(BuildContext context) {
                           style: Textstyle.customstyle(black, 18),
                         ),
                         const SizedBox(height: 16.0),
-                        const OutlineButtonsRow(),
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: buttonLabels.map((label) {
+                              return Padding(
+                                padding: const EdgeInsets.only(right: 10),
+                                child: Outlinebutton(
+                                  buttonborderRadius: 10,
+                                  buttonbordercolor: yellow,
+                                  buttontext: label,
+                                  onTap: () {},
+                                ),
+                              );
+                            }).toList(),
+                          ),
+                        ),
                         const SizedBox(height: 16.0),
                         Text('Rating', style: Textstyle.customstyle(black, 18)),
                         const SizedBox(height: 16.0),
-                        const OutlineButtonsRow(),
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: buttonLabels.map((label) {
+                              return Padding(
+                                padding: const EdgeInsets.only(right: 10),
+                                child: Outlinebutton(
+                                  buttonborderRadius: 10,
+                                  buttonbordercolor: yellow,
+                                  buttontext: label,
+                                  onTap: () {},
+                                ),
+                              );
+                            }).toList(),
+                          ),
+                        ),
                         const SizedBox(height: 16.0),
                         Text('Distance',
                             style: Textstyle.customstyle(black, 18)),
                         const SizedBox(height: 16.0),
-                        const OutlineButtonsRow(),
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: buttonLabels.map((label) {
+                              return Padding(
+                                padding: const EdgeInsets.only(right: 10),
+                                child: Outlinebutton(
+                                  buttonborderRadius: 10,
+                                  buttonbordercolor: yellow,
+                                  buttontext: label,
+                                  onTap: () {},
+                                ),
+                              );
+                            }).toList(),
+                          ),
+                        ),
                         const SizedBox(height: 16.0),
                         Container(
                             height: 1,

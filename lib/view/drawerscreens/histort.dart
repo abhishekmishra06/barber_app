@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:barber_app/utils/components/imports.dart';
+
 
 
 class History extends StatefulWidget {
@@ -40,8 +40,7 @@ class _HistoryState extends State<History> {
                                         //     Border.all(color: Colors.black)
                                       ),
                                       child: Card(
-                                        // margin: EdgeInsets.symmetric(
-                                        //     horizontal: mq.width * .04, vertical: 4),
+                                
                                         shape: RoundedRectangleBorder(
                                             borderRadius:
                                                 BorderRadius.circular(10)),

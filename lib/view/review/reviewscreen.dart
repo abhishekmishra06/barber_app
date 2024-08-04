@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
-
-import '../../const/const.dart';
-import 'widgets/review.dart';
+import 'package:barber_app/utils/components/imports.dart';
+ 
 
 class Reviewscreen extends StatelessWidget {
   const Reviewscreen({super.key});

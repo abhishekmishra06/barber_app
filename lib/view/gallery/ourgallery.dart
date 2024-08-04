@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
-
-import '../../const/const.dart';
-import 'widgets/gallery.dart';
-
+import 'package:barber_app/utils/components/imports.dart';
+ 
 class Ourgallery extends StatelessWidget {
   const Ourgallery({super.key});
 

@@ -1,17 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+ import 'package:barber_app/utils/components/imports.dart';
+ 
 
-import '../../../const/const.dart';
-import '../../../controller/controller.dart';
-import '../../../utils/components/inputfield.dart';
-import '../../../utils/components/storeCard.dart';
-import '../../../utils/components/storeCardListType.dart';
-import '../../bookmarks/mybookmark.dart';
-import '../../filter/filter.dart';
-import '../../notification/notification.dart';
-import '../../productDetail_view/productDetail_view.dart';
-import '../favouriteItemList_view/favouriteItemList_view.dart';
-import '../mycart_view/mycart_view.dart';
 
 class GeneralStore extends StatelessWidget {
   const GeneralStore({super.key});

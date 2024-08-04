@@ -1,11 +1,6 @@
-import 'package:barber_app/utils/components/textstyle.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
+ import 'package:barber_app/utils/components/imports.dart';
 
-import '../../../const/const.dart';
-import '../../../utils/components/addToCartCard.dart';
-import '../../../utils/components/buttons_widget.dart';
+ 
 
 class MyCart extends StatelessWidget {
   const MyCart({super.key});
@@ -85,30 +80,30 @@ class MyCart extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Sub Total'),
+                        const Text('Sub Total'),
                         Text(
                           '23232',
                           style: Textstyle.customstyle(black, 15),
                         ),
                       ],
                     ),
-                    Divider(),
+                    const Divider(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Shiping'),
+                        const Text('Shiping'),
                         Text('23', style: Textstyle.customstyle(black, 15)),
                       ],
                     ),
-                    Divider(),
+                    const Divider(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Total'),
+                        const Text('Total'),
                         Text('23232', style: Textstyle.customstyle(black, 15)),
                       ],
                     ),
-                    Divider(),
+                    const Divider(),
                     TextButtonwidget(
                       buttonText: "Checkout",
                       buttonbgcolor: lightyellow,

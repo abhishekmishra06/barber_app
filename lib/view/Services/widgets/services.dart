@@ -1,10 +1,5 @@
-import 'package:barber_app/utils/components/textstyle.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../../const/const.dart';
-import '../../home_screen/homescreen.dart';
-import '../servicescreen.dart';
+import 'package:barber_app/utils/components/imports.dart';
+ 
 
 class ServicesPage extends StatelessWidget {
   const ServicesPage({super.key});
@@ -16,7 +11,7 @@ class ServicesPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          NearbyLocation(
+          RowListTile(
             buttontext: "See All",
             text: "Our Services",
             onpressed: () {

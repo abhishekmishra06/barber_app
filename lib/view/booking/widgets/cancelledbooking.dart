@@ -1,7 +1,5 @@
-import 'package:barber_app/view/booking/mybooking.dart';
-import 'package:flutter/material.dart';
-
-import '../../../const/const.dart';
+import 'package:barber_app/utils/components/imports.dart';
+ 
 
 class Bookingcancel extends StatelessWidget {
   const Bookingcancel({super.key});

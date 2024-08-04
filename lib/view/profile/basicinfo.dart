@@ -1,15 +1,5 @@
 import 'dart:io';
-import 'package:flutter/material.dart';
-import 'package:awesome_dialog/awesome_dialog.dart';
-import 'package:image_picker/image_picker.dart';
-import '../../const/const.dart';
-import '../../controller/controller.dart';
-import '../../utils/components/buttons_widget.dart';
-import '../../utils/components/inputfield.dart';
-import '../../utils/components/snack_bar.dart';
-import '../../utils/components/textstyle.dart';
-
-// final user = FirebaseAuth.instance.currentUser!.uid;
+import 'package:barber_app/utils/components/imports.dart';
 
 File? galleryFile;
 

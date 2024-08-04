@@ -1,6 +1,4 @@
-import 'package:barber_app/const/const.dart';
-import 'package:barber_app/utils/components/textstyle.dart';
-import 'package:flutter/material.dart';
+import 'package:barber_app/utils/components/imports.dart';
 
 class NotificationPage extends StatelessWidget {
   final List<NotificationItem> notifications = [
