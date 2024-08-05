@@ -1,5 +1,5 @@
 import 'package:barber_app/utils/imports.dart';
-import 'package:barber_app/view/shopdetail.dart/shop_detail_page.dart';
+import 'package:barber_app/view/shop_detail_view.dart/shop_detail_page.dart';
 
 
 class SalonCard extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:barber_app/utils/imports.dart';
-import 'package:barber_app/view/explore/explore.dart';
+import 'package:barber_app/view/explore_view/explore.dart';
 import 'package:barber_app/view/home_view/home_view.dart';
-import 'package:barber_app/view/inbox/inbox.dart';
+import 'package:barber_app/view/inbox_view/inbox.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({Key? key}) : super(key: key);

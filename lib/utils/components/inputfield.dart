@@ -1,5 +1,5 @@
 import 'package:barber_app/utils/imports.dart';
-
+import 'package:flutter/services.dart';
 
 class Inputfield extends StatefulWidget {
   const Inputfield({
@@ -7,11 +7,17 @@ class Inputfield extends StatefulWidget {
     required this.hinttext,
     required this.controller,
     required this.inputfieldIcon,
+    this.range = 10,
+    this.enforceDigitRestriction = false,
+    this.keyboardType = TextInputType.text,
   });
 
   final String hinttext;
   final TextEditingController controller;
   final Icon inputfieldIcon;
+  final bool enforceDigitRestriction;
+  final TextInputType keyboardType;
+  final int range;
 
   @override
   _InputfieldState createState() => _InputfieldState();
@@ -41,6 +47,15 @@ class _InputfieldState extends State<Inputfield> {
             style: TextStyle(
                 color: isFocused ? yellow : grey, fontWeight: FontWeight.bold),
             controller: widget.controller,
+            keyboardType: widget.keyboardType,
+            inputFormatters: widget.enforceDigitRestriction
+                ? [
+                    FilteringTextInputFormatter.allow(
+                        RegExp(r'[0-9]')), // Allow digits only
+                    LengthLimitingTextInputFormatter(
+                        widget.range), // Limit to 10 characters
+                  ]
+                : null,
             onChanged: (value) {},
             textAlignVertical: TextAlignVertical.center,
             decoration: InputDecoration(
@@ -66,12 +81,15 @@ class PasswordInputField extends StatefulWidget {
     required this.controller,
     required this.inputfieldIcon,
     required this.visible,
+    this.enforceDigitRestriction = false,
+    this.range = 10,
   });
 
   final TextEditingController controller;
   final Icon inputfieldIcon;
   late bool visible;
-
+  final bool enforceDigitRestriction;
+  final int range;
   @override
   _PasswordInputFieldState createState() => _PasswordInputFieldState();
 }
@@ -97,6 +115,11 @@ class _PasswordInputFieldState extends State<PasswordInputField> {
         child: Center(
           child: TextFormField(
             controller: widget.controller,
+            inputFormatters: widget.enforceDigitRestriction
+                ? [
+                    LengthLimitingTextInputFormatter(widget.range),
+                  ]
+                : null,
             obscureText: !widget.visible,
             onChanged: (value) {},
             style: TextStyle(

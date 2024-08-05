@@ -11,4 +11,4 @@ class Getxcontroll extends GetxController {
   }
 }
  
-TextEditingController phonenoController = TextEditingController();
+ 

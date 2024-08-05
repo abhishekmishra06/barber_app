@@ -1,5 +1,5 @@
 import 'package:barber_app/utils/imports.dart';
-
+import 'package:barber_app/utils/validation.dart';
 
 class Signupscreen extends StatefulWidget {
   const Signupscreen({super.key});
@@ -14,13 +14,39 @@ class _SignupscreenState extends State<Signupscreen> {
   bool passwordsMatch = true;
   @override
   Widget build(BuildContext context) {
-    void passwordmatch() {
+    bool passwordmatch() {
       if (passwordController.text != confirmPasswordController.text) {
         setState(() {
           passwordsMatch = false;
         });
-        return;
+        return false;
       }
+      return true;
+    }
+
+    bool checkAllFieldsValid() {
+      bool isValid = true;
+
+      bool validate(bool Function() check) {
+        if (isValid) {
+          isValid = check();
+        }
+        return isValid;
+      }
+
+      validate(() => Validator.validateEmail(
+            emailController.text,
+          ));
+
+      validate(() => Validator.validateMobileNumber(
+            phonenoController.text,
+          ));
+
+      validate(
+          () => Validator.validatePassword(passwordController.text, context));
+      validate(() =>
+          Validator.validatePassword(confirmPasswordController.text, context));
+      return isValid;
     }
 
     return Scaffold(
@@ -81,6 +107,7 @@ class _SignupscreenState extends State<Signupscreen> {
                 height: 10,
               ),
               Inputfield(
+                  keyboardType: TextInputType.emailAddress,
                   controller: emailController,
                   hinttext: "krishna@gmail.com",
                   inputfieldIcon: const Icon(Icons.email)),
@@ -95,6 +122,8 @@ class _SignupscreenState extends State<Signupscreen> {
                 height: 10,
               ),
               Inputfield(
+                  enforceDigitRestriction: true,
+                  keyboardType: TextInputType.phone,
                   controller: phonenoController,
                   hinttext: "91+ 6385479525",
                   inputfieldIcon: const Icon(Icons.phone_android_outlined)),
@@ -109,6 +138,8 @@ class _SignupscreenState extends State<Signupscreen> {
                 height: 10,
               ),
               PasswordInputField(
+                  enforceDigitRestriction: true,
+                  range: 12,
                   controller: passwordController,
                   visible: _passwordVisible,
                   inputfieldIcon: const Icon(Icons.lock)),
@@ -123,6 +154,8 @@ class _SignupscreenState extends State<Signupscreen> {
                 height: 10,
               ),
               PasswordInputField(
+                  enforceDigitRestriction: true,
+                  range: 12,
                   controller: confirmPasswordController,
                   visible: _confirmpasswordVisible,
                   inputfieldIcon: const Icon(Icons.lock)),
@@ -166,8 +199,11 @@ class _SignupscreenState extends State<Signupscreen> {
                 buttontextcolor: black,
                 buttonwidth: double.infinity,
                 onTap: () {
-                  passwordmatch();
-                  Get.to(const Phoneotpscreen());
+                  if (checkAllFieldsValid()) {
+                    if (passwordmatch()) {
+                      Get.to(const Phoneotpscreen());
+                    }
+                  }
                 },
               ),
               const SizedBox(

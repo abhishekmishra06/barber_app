@@ -1,6 +1,6 @@
 import 'package:barber_app/controller/controller.dart';
 import 'package:barber_app/utils/components/image_carousel.dart';
-import 'package:barber_app/view/mostpopular/mostpopular.dart';
+import 'package:barber_app/view/mostpopular_shop_view/mostpopular.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../const/const.dart';
@@ -11,11 +11,11 @@ import '../../utils/components/buttons_widget.dart';
 import '../../utils/components/inputfield.dart';
 import '../../utils/components/row_list_tile.dart';
 import '../../utils/components/textstyle.dart';
-import '../filter/filter.dart';
-import '../bookmarks/mybookmark.dart';
-import '../nearlocation/nearlocation.dart';
-import '../notification/notification.dart';
-import '../profile/profile.dart';
+import '../filter_view/filter.dart';
+import '../bookmark_view/mybookmark.dart';
+import '../nearlocation_shop_view/nearlocation.dart';
+import '../notification_view/notification.dart';
+import '../profile_view/profile.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});

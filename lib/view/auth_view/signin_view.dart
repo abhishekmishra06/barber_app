@@ -1,5 +1,5 @@
 import 'package:barber_app/utils/imports.dart';
-
+import 'package:barber_app/utils/validation.dart';
 
 class Signinscreen extends StatefulWidget {
   const Signinscreen({super.key});
@@ -10,6 +10,24 @@ class Signinscreen extends StatefulWidget {
 
 class _SigninscreenState extends State<Signinscreen> {
   late final bool _passwordVisible = false;
+
+  bool checkAllFieldsValid() {
+    bool isValid = true;
+
+    bool validate(bool Function() check) {
+      if (isValid) {
+        isValid = check();
+      }
+      return isValid;
+    }
+
+    validate(() => Validator.validateMobileNumber(
+          phonenoController.text,
+        ));
+    validate(
+        () => Validator.validatePassword(passwordController.text, context));
+    return isValid;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,6 +89,8 @@ class _SigninscreenState extends State<Signinscreen> {
                 height: 10,
               ),
               Inputfield(
+                  enforceDigitRestriction: true,
+                  keyboardType: TextInputType.phone,
                   controller: phonenoController,
                   hinttext: "91+ 9654547845",
                   inputfieldIcon: const Icon(Icons.phone_android_outlined)),
@@ -85,6 +105,8 @@ class _SigninscreenState extends State<Signinscreen> {
                 height: 10,
               ),
               PasswordInputField(
+                  enforceDigitRestriction: true,
+                  range: 12,
                   controller: passwordController,
                   visible: _passwordVisible,
                   inputfieldIcon: const Icon(Icons.lock)),
@@ -113,7 +135,9 @@ class _SigninscreenState extends State<Signinscreen> {
                 buttontextcolor: black,
                 buttonwidth: double.infinity,
                 onTap: () {
-                  Get.to(const Phoneotpscreen());
+                  if (checkAllFieldsValid()) {
+                    Get.to(const Phoneotpscreen());
+                  }
                 },
               ),
               const SizedBox(

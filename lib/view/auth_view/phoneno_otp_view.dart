@@ -1,9 +1,25 @@
 import 'package:barber_app/utils/imports.dart';
- 
-
+import 'package:barber_app/utils/validation.dart';
 
 class Phoneotpscreen extends StatelessWidget {
   const Phoneotpscreen({super.key});
+
+  bool checkAllFieldsValid() {
+    bool isValid = true;
+
+    bool validate(bool Function() check) {
+      if (isValid) {
+        isValid = check();
+      }
+      return isValid;
+    }
+
+    validate(() => Validator.verifyOtp(
+          otpController.text,
+        ));
+
+    return isValid;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +80,7 @@ class Phoneotpscreen extends StatelessWidget {
                       defaultPinTheme: defaultPinTheme,
                       focusedPinTheme: focusedPinTheme,
                       showCursor: true,
+                      controller: otpController,
                     ),
                   ],
                 ),
@@ -78,7 +95,9 @@ class Phoneotpscreen extends StatelessWidget {
                   buttontextcolor: black,
                   buttonwidth: double.infinity,
                   onTap: () {
-                    Get.to(const Personalinfoscreen());
+                    if (checkAllFieldsValid()) {
+                      Get.to(const Personalinfoscreen());
+                    }
                   },
                 ),
                 const SizedBox(

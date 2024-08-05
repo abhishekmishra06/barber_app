@@ -51,6 +51,7 @@ dependencies:
   http: ^1.2.1
   path: ^1.9.0
   flick_video_player: ^0.8.0
+  fluttertoast: ^8.2.5
 
 dev_dependencies:
   flutter_test:
