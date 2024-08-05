@@ -1,51 +1,32 @@
-import 'package:barber_app/utils/components/imports.dart';
+import 'package:barber_app/utils/imports.dart';
 
 class NotificationPage extends StatelessWidget {
-  final List<NotificationItem> notifications = [
-    NotificationItem(
-      title: "Payment Successful!",
-      description: "You have make a salon payment",
-      date: "Today",
-    ),
-    NotificationItem(
-      title: "New Services Available!",
-      description: "Now you can search the nearest salon",
-      date: "Yesterday",
-    ),
-    NotificationItem(
-      title: "New Services Available!",
-      description: "Now you can search the nearest salon",
-      date: "March 07, 2024",
-    ),
-    // Add more notifications as needed
-  ];
-
   NotificationPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
+      backgroundColor: white,
+      appBar: AppBar(
         backgroundColor: white,
-        appBar: AppBar(
-          backgroundColor: white,
-          leading: const BackButton(
-            color: Colors.black,
-          ),
-          elevation: 2,
-          title: const Text('Notifications'),
+        leading: const BackButton(
+          color: Colors.black,
         ),
-        body: ListView.builder(
-          itemCount: notifications.length,
-          itemBuilder: (context, index) {
-            return NotificationCard(notification: notifications[index]);
-          },
-        ),
+        elevation: 2,
+        title: const Text('Notifications'),
+      ),
+      body: ListView.builder(
+        itemCount: DummyData.notifications.length,
+        itemBuilder: (context, index) {
+          return NotificationCard(notification: DummyData.notifications[index]);
+        },
+      ),
     );
   }
 }
 
 class NotificationCard extends StatelessWidget {
-  final NotificationItem notification;
+  final notification;
 
   const NotificationCard({super.key, required this.notification});
 
@@ -58,7 +39,7 @@ class NotificationCard extends StatelessWidget {
           Row(
             children: [
               Text(
-                notification.date,
+                notification['date'],
                 style: Textstyle.customstyle(black, 19),
               )
             ],
@@ -69,18 +50,16 @@ class NotificationCard extends StatelessWidget {
           Card(
             child: ListTile(
               leading: const CircleAvatar(
-                radius:
-                    30, // Adjust the radius to make the circular image larger
-
+                radius: 30,
                 child: Icon(Icons.notifications),
               ),
               title: Text(
-                notification.title,
+                notification['title'],
                 style:
                     const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               subtitle: Text(
-                notification.description,
+                notification['description'],
                 style: const TextStyle(color: black, fontSize: 15),
               ),
               // trailing: Text(
@@ -93,16 +72,4 @@ class NotificationCard extends StatelessWidget {
       ),
     );
   }
-}
-
-class NotificationItem {
-  final String title;
-  final String description;
-  final String date;
-
-  NotificationItem({
-    required this.title,
-    required this.description,
-    required this.date,
-  });
 }

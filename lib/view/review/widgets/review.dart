@@ -1,4 +1,4 @@
-import 'package:barber_app/utils/components/imports.dart';
+import 'package:barber_app/utils/imports.dart';
  
 
 class Reviewscreencard extends StatelessWidget {
@@ -47,7 +47,7 @@ class Reviewscreencard extends StatelessWidget {
                                 style: OutlinedButton.styleFrom(
                                     side: const BorderSide(
                                         color:
-                                            yellow), // Change border color here
+                                            yellow),
                                     textStyle: const TextStyle(
                                         fontSize: 15,
                                         fontStyle: FontStyle.italic),

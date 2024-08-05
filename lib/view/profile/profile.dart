@@ -5,16 +5,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:share/share.dart';
 import 'package:url_launcher/url_launcher.dart';
- import '../../const/const.dart';
+import '../../const/const.dart';
 import '../../utils/components/buttons_widget.dart';
 import '../../utils/components/list.dart';
 import '../../utils/components/textstyle.dart';
 
 import '../../utils/components/urllanch.dart';
-import '../drawerscreens/safety_trips.dart';
-import 'basicinfo.dart';
-
- 
+ import 'basicinfo.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -211,7 +208,7 @@ class Profile extends StatelessWidget {
               lasticon: Icons.navigate_next,
               lasticoncolor: grey,
               ontap: () {
-                Get.to(const SafetyTipsScreen());
+                // Get.to(   );
               },
               text: "Privcy Policy",
             ),

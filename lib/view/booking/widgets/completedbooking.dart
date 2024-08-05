@@ -1,39 +1,42 @@
-import 'package:barber_app/utils/components/imports.dart';
+import 'package:barber_app/utils/imports.dart';
 
 class Completedbooking extends StatelessWidget {
   const Completedbooking({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
+    return Padding(
       padding: EdgeInsets.all(12.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-
-          SizedBox(height: 10),
-          CompleteItemcard(
-            imageurl:
-                "https://images.pexels.com/photos/2820884/pexels-photo-2820884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            date: "Dec 22 2024 - 10:00 AM",
-            description:
-                "Aloe Vera shampoo Hair Wash",
-            status: "Completed",
-            title: 'Completed Order 1',
-            location: 'Location 1',
+          Container(height: 1, width: double.infinity, color: buttonborder),
+          const SizedBox(height: 5),
+          const Text(
+            'Complete Orders',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
-          SizedBox(height: 15),
-          CompleteItemcard(
-            imageurl:
-                "https://images.pexels.com/photos/2820884/pexels-photo-2820884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            date: "Dec 22 2024 - 10:00 AM",
-            description:
-                "Aloe Vera shampoo Hair Wash",
-            status: "Completed",
-            title: 'Completed Order 2',
-            location: 'Location 2',
+          Expanded(
+            child: ListView.builder(
+              itemCount: DummyData.completedOrders.length,
+              itemBuilder: (context, index) {
+                final order = DummyData.completedOrders[index];
+                return Column(
+                  children: [
+                    CompleteItemcard(
+                      imageurl: order["imageurl"]!,
+                      date: order["date"]!,
+                      description: order["description"]!,
+                      status: order["status"]!,
+                      title: order["title"]!,
+                      location: order["location"]!,
+                    ),
+                    const SizedBox(height: 15),
+                  ],
+                );
+              },
+            ),
           ),
-          // Add more CompletedCancelledItem widgets for additional completed orders
         ],
       ),
     );

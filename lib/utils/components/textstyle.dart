@@ -1,4 +1,4 @@
-import 'package:barber_app/utils/components/imports.dart';
+import 'package:barber_app/utils/imports.dart';
 
 class Textstyle {
   static const TextStyle black = TextStyle(

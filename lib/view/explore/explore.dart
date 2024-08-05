@@ -1,4 +1,4 @@
-import 'package:barber_app/utils/components/imports.dart';
+import 'package:barber_app/utils/imports.dart';
 
 
 class Explorescreen extends StatelessWidget {
@@ -16,8 +16,7 @@ class Explorescreen extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.search),
             onPressed: () {
-              // Implement search functionality
-            },
+             },
           ),
         ],
       ),

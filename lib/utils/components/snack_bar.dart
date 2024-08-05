@@ -1,4 +1,4 @@
-import 'package:barber_app/utils/components/imports.dart';
+import 'package:barber_app/utils/imports.dart';
 
 
 void showSnackBar(BuildContext context, {String message = ""}) {
@@ -14,7 +14,7 @@ void showSnackBar(BuildContext context, {String message = ""}) {
   );
 
   ScaffoldMessenger.of(context)
-      .hideCurrentSnackBar(); // Hide any existing snack bars
+      .hideCurrentSnackBar();  
   ScaffoldMessenger.of(context).showSnackBar(snackBar);
 }
 
@@ -28,7 +28,7 @@ void showLogoutConfirmationDialog(BuildContext context, Function onLogout) {
         actions: <Widget>[
           TextButton(
             onPressed: () {
-              Navigator.of(context).pop(); // Close the dialog
+              Navigator.of(context).pop();  
             },
             child: const Text('Cancel'),
           ),

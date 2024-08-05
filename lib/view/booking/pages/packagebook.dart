@@ -1,5 +1,4 @@
-import 'package:barber_app/utils/components/imports.dart';
- 
+import 'package:barber_app/utils/imports.dart';
 
 class Packagebooking extends StatelessWidget {
   const Packagebooking({super.key});
@@ -82,36 +81,55 @@ class Packagebooking extends StatelessWidget {
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 10),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      CheckBoxItem(title: 'Haircut'),
-                      SizedBox(
-                        width: 70,
-                      ),
-                      CheckBoxItem(title: 'Shave the Beard'),
-                    ],
-                  ),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      CheckBoxItem(title: 'Facial'),
-                      SizedBox(
-                        width: 79,
-                      ),
-                      CheckBoxItem(title: 'Shave Mustache'),
-                    ],
-                  ),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      CheckBoxItem(title: 'Hairstyle'),
-                      SizedBox(
-                        width: 60,
-                      ),
-                      CheckBoxItem(title: 'Hair Coloring'),
-                    ],
-                  ),
+                  // const Row(
+                  //   mainAxisAlignment: MainAxisAlignment.start,
+                  //   children: [
+                  //     CheckBoxItem(title: 'Haircut'),
+                  //     SizedBox(
+                  //       width: 70,
+                  //     ),
+                  //     CheckBoxItem(title: 'Shave the Beard'),
+                  //   ],
+                  // ),
+                  // const Row(
+                  //   mainAxisAlignment: MainAxisAlignment.start,
+                  //   children: [
+                  //     CheckBoxItem(title: 'Facial'),
+                  //     SizedBox(
+                  //       width: 79,
+                  //     ),
+                  //     CheckBoxItem(title: 'Shave Mustache'),
+                  //   ],
+                  // ),
+                  // const Row(
+                  //   mainAxisAlignment: MainAxisAlignment.start,
+                  //   children: [
+                  //     CheckBoxItem(title: 'Hairstyle'),
+                  //     SizedBox(
+                  //       width: 60,
+                  //     ),
+                  //     CheckBoxItem(title: 'Hair Coloring'),
+                  //   ],
+                  // ),
+
+                   
+                  ...List.generate((DummyData.services.length / 2).ceil(),
+                      (index) {
+                    final firstService = DummyData.services[index * 2];
+                    final secondService =
+                        (index * 2 + 1 < DummyData.services.length)
+                            ? DummyData.services[index * 2 + 1]
+                            : null;
+                    return Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        CheckBoxItem(title: firstService),
+                        const SizedBox(width: 60),
+                        if (secondService != null)
+                          CheckBoxItem(title: secondService),
+                      ],
+                    );
+                  })
                 ],
               ),
             ),
@@ -146,7 +164,7 @@ class Packagebooking extends StatelessWidget {
 class CheckBoxItem extends StatefulWidget {
   final String title;
 
-  const CheckBoxItem({Key? key, required this.title}) : super(key: key);
+  const CheckBoxItem({super.key, required this.title});
 
   @override
   _CheckBoxItemState createState() => _CheckBoxItemState();

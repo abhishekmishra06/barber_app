@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:barber_app/utils/components/imports.dart';
+import 'package:barber_app/utils/imports.dart';
 
 File? galleryFile;
 

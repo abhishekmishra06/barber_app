@@ -1,5 +1,4 @@
-import 'package:barber_app/utils/components/imports.dart';
- 
+import 'package:barber_app/utils/imports.dart';
 
 class Reviewscreen extends StatelessWidget {
   const Reviewscreen({super.key});
@@ -16,43 +15,16 @@ class Reviewscreen extends StatelessWidget {
         elevation: 2,
         title: const Text('Reviews'),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(15.0),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-                              Reviewscreencard(),
-          
-              SizedBox(
-                height: 15,
-              ),
-                             Reviewscreencard(),
-          
-              SizedBox(
-                height: 15,
-              ),
-                              Reviewscreencard(),
-          
-              SizedBox(
-                height: 15,
-              ),
-                             Reviewscreencard(),
-          
-              SizedBox(
-                height: 15,
-              ),
-                              Reviewscreencard(),
-          
-              SizedBox(
-                height: 15,
-              ),
-                              Reviewscreencard(),
-          
-              SizedBox(
-                height: 15,
-              ),
-            ],
-          ),
+      body: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: ListView.builder(
+          itemCount: 5,
+          itemBuilder: (context, index) {
+            return const Padding(
+              padding: EdgeInsets.only(bottom: 15.0),
+              child: Reviewscreencard(),
+            );
+          },
         ),
       ),
     );

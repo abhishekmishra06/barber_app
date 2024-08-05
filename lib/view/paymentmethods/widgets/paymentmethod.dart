@@ -1,6 +1,6 @@
-import 'package:barber_app/utils/components/imports.dart';
+import 'package:barber_app/utils/imports.dart';
 
-
+ 
 class PaymentMethodsScreen extends StatefulWidget {
   const PaymentMethodsScreen({super.key});
 
@@ -25,58 +25,26 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
           Container(
             padding: const EdgeInsets.only(
                 left: 15, top: 15, right: 15, bottom: 100),
-            child: ListView(
-              children: [
-                PaymentMethodItem(
-                  image: 'assets/paypal_logo.png',
-                  name: 'PayPal',
-                  isSelected: selectedPaymentMethod == 'PayPal',
-                  onSelect: () {
-                    setState(() {
-                      selectedPaymentMethod = 'PayPal';
-                    });
-                  },
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                PaymentMethodItem(
-                  image: 'assets/google_pay_logo.png',
-                  name: 'Google Pay',
-                  isSelected: selectedPaymentMethod == 'Google Pay',
-                  onSelect: () {
-                    setState(() {
-                      selectedPaymentMethod = 'Google Pay';
-                    });
-                  },
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                PaymentMethodItem(
-                  image: 'assets/apple_pay_logo.png',
-                  name: 'Apple Pay',
-                  isSelected: selectedPaymentMethod == 'Apple Pay',
-                  onSelect: () {
-                    setState(() {
-                      selectedPaymentMethod = 'Apple Pay';
-                    });
-                  },
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                PaymentMethodItem(
-                  image: 'assets/card_logo.png',
-                  name: '.... .... .... 5685',
-                  isSelected: selectedPaymentMethod == 'Card',
-                  onSelect: () {
-                    setState(() {
-                      selectedPaymentMethod = 'Card';
-                    });
-                  },
-                ),
-              ],
+            child: ListView.builder(
+              itemCount: DummyData.paymentMethods.length,
+              itemBuilder: (context, index) {
+                final method = DummyData.paymentMethods[index];
+                return Column(
+                  children: [
+                    PaymentMethodCard(
+                      image: method['image']!,
+                      name: method['name']!,
+                      isSelected: selectedPaymentMethod == method['name'],
+                      onSelect: () {
+                        setState(() {
+                          selectedPaymentMethod = method['name']!;
+                        });
+                      },
+                    ),
+                    const SizedBox(height: 20),
+                  ],
+                );
+              },
             ),
           ),
           Column(
@@ -104,13 +72,13 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
   }
 }
 
-class PaymentMethodItem extends StatelessWidget {
+ class PaymentMethodCard extends StatelessWidget {
   final String image;
   final String name;
   final bool isSelected;
   final VoidCallback onSelect;
 
-  const PaymentMethodItem({
+  const PaymentMethodCard({
     super.key,
     required this.image,
     required this.name,

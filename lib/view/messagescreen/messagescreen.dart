@@ -16,8 +16,7 @@ class ChatScreen extends StatelessWidget {
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
-              // Handle back button press
-            },
+             },
           ),
           title: const Row(
             children: [

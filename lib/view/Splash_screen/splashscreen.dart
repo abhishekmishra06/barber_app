@@ -1,4 +1,4 @@
-import 'package:barber_app/utils/components/imports.dart';
+import 'package:barber_app/utils/imports.dart';
  import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 

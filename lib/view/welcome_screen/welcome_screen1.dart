@@ -1,4 +1,4 @@
- import 'package:barber_app/utils/components/imports.dart';
+ import 'package:barber_app/utils/imports.dart';
 
 class Welcomescreen1 extends StatefulWidget {
   const Welcomescreen1({super.key});

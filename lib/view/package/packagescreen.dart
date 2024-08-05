@@ -1,4 +1,5 @@
-import 'package:barber_app/utils/components/imports.dart';
+import 'package:barber_app/utils/components/package_card.dart';
+import 'package:barber_app/utils/imports.dart';
  
 
 class Packagescreen extends StatelessWidget {
@@ -16,70 +17,22 @@ class Packagescreen extends StatelessWidget {
         elevation: 2,
         title: const Text('Our Package'),
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(15.0),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Packagecards(
-            price: 1125,
-            imageUrl:
-                "https://images.pexels.com/photos/2820884/pexels-photo-2820884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            offerdetail: "Special Offer package valid only 12 mar 2024",
-            offername: "Haircut & HairStyle",
-          ),
-              SizedBox(
-                height: 15,
+  body: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: ListView.builder(
+          itemCount: DummyData.packages.length,
+          itemBuilder: (context, index) {
+            final package = DummyData.packages[index];
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 15.0),
+              child: Packagecards(
+                price: package['price'].toDouble(),
+                imageUrl: package['imageUrl'],
+                offerdetail: package['offerDetail'],
+                offername: package['offerName'],
               ),
-               Packagecards(
-            price: 1125,
-            imageUrl:
-                "https://images.pexels.com/photos/2820884/pexels-photo-2820884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            offerdetail: "Special Offer package valid only 12 mar 2024",
-            offername: "Haircut & HairStyle",
-          ),
-              SizedBox(
-                height: 15,
-              ),
-              Packagecards(
-            price: 1125,
-            imageUrl:
-                "https://images.pexels.com/photos/2820884/pexels-photo-2820884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            offerdetail: "Special Offer package valid only 12 mar 2024",
-            offername: "Haircut & HairStyle",
-          ),
-              SizedBox(
-                height: 15,
-              ),
-              Packagecards(
-            price: 1125,
-            imageUrl:
-                "https://images.pexels.com/photos/2820884/pexels-photo-2820884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            offerdetail: "Special Offer package valid only 12 mar 2024",
-            offername: "Haircut & HairStyle",
-          ),
-              SizedBox(
-                height: 15,
-              ),
-              Packagecards(
-            price: 1125,
-            imageUrl:
-                "https://images.pexels.com/photos/2820884/pexels-photo-2820884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            offerdetail: "Special Offer package valid only 12 mar 2024",
-            offername: "Haircut & HairStyle",
-          ),
-              SizedBox(
-                height: 15,
-              ),
-          Packagecards(
-            price: 1125,
-            imageUrl:
-                "https://images.pexels.com/photos/2820884/pexels-photo-2820884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            offerdetail: "Special Offer package valid only 12 mar 2024",
-            offername: "Haircut & HairStyle",
-          ),
-            ],
-          ),
+            );
+          },
         ),
       ),
     );

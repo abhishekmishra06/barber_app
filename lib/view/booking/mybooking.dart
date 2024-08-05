@@ -1,10 +1,10 @@
-import 'package:barber_app/utils/components/imports.dart';
+import 'package:barber_app/utils/imports.dart';
   
 
  
 
 class BookingScreen extends StatefulWidget {
-  const BookingScreen({Key? key}) : super(key: key);
+  const BookingScreen({super.key});
 
   @override
   _BookingScreenState createState() => _BookingScreenState();
@@ -22,7 +22,7 @@ class _BookingScreenState extends State<BookingScreen>
   }
 
   void _handleTabSelection() {
-    setState(() {}); // Rebuild the UI when tab selection changes
+    setState(() {}); 
   }
 
   @override
@@ -87,8 +87,7 @@ class _BookingScreenState extends State<BookingScreen>
       body: TabBarView(
         controller: _tabController,
         children: const [
-          // Add your booking screens here
-          Upcomingbooking(),
+           Upcomingbooking(),
           Completedbooking(),
           Bookingcancel(),
         ],

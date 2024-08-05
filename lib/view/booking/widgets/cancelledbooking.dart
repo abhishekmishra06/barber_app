@@ -1,5 +1,4 @@
-import 'package:barber_app/utils/components/imports.dart';
- 
+import 'package:barber_app/utils/imports.dart';
 
 class Bookingcancel extends StatelessWidget {
   const Bookingcancel({super.key});
@@ -12,32 +11,33 @@ class Bookingcancel extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(height: 1, width: double.infinity, color: buttonborder),
-
+          const SizedBox(height: 5),
           const Text(
             'Cancelled Orders',
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 16),
-          const CancelledItemcard(
-            imageurl:
-                "https://images.pexels.com/photos/2820884/pexels-photo-2820884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            date: "Dec 22 2024 - 10:00 AM",
-            description: "Aloe Vera shampoo Hair Wash",
-            status: "Cancled",
-            title: 'Cancelled Order 1',
-            location: 'Location 1',
+          const SizedBox(height: 10),
+          Expanded(
+            child: ListView.builder(
+              itemCount: DummyData.cancelledOrders.length,
+              itemBuilder: (context, index) {
+                final order = DummyData.cancelledOrders[index];
+                return Column(
+                  children: [
+                    CancelledItemcard(
+                      imageurl: order["imageurl"]!,
+                      date: order["date"]!,
+                      description: order["description"]!,
+                      status: order["status"]!,
+                      title: order["title"]!,
+                      location: order["location"]!,
+                    ),
+                    const SizedBox(height: 15),
+                  ],
+                );
+              },
+            ),
           ),
-          const SizedBox(height: 15),
-          const CancelledItemcard(
-            imageurl:
-                "https://images.pexels.com/photos/2820884/pexels-photo-2820884.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-            date: "Dec 22 2024 - 10:00 AM",
-            description: "Aloe Vera shampoo Hair Wash",
-            status: "Cancled",
-            title: 'Cancelled Order 2',
-            location: 'Location 2',
-          ),
-          // Add more CompletedCancelledItem widgets for additional cancelled orders
         ],
       ),
     );
